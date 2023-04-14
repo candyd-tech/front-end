@@ -1,0 +1,62 @@
+@use "abstracts/index" as *;
+
+
+.landing_button {
+  padding: 0.75rem 2.5rem;
+  // background: red;
+  border-radius: 30px;
+  align-self: flex-start;
+}
+
+.not_clipped {
+  background: rgb( var(--foreground-rgb) );
+}
+
+.clipped {
+  background: rgb(var(--background-rgb));
+}
+
+.background {
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient( */
+  /*     to bottom, */
+  /*     transparent, */
+  /*     rgb(var(--background-end-rgb)) */
+  /*   ) */
+  /*   rgb(var(--background-start-rgb)); */
+  width: 100%;
+  // min-height: 100vh;
+  height: calc(100vh - var(--nav-height));
+  position: absolute;
+  top: var(--nav-height);
+  bottom: 0;
+  background: linear-gradient(
+      to right,
+      rgb(var(--foreground-rgb)),
+      rgb(var(--foreground-rgb))
+    ) left top;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
+  /* clip-path: polygon(0 88%, 99% 82%, 100% 100%, 0% 100%); */
+
+  @include media-smol {
+    clip-path: polygon();
+  }
+
+  @include media-large {
+    clip-path: polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
+  }
+}
+
+.section {
+  height: calc(100vh - var(--nav-height));
+
+  .sections {
+    width: 100%;
+  }
+
+  .image_section {
+    color: white
+  }
+}

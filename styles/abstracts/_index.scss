@@ -1,0 +1,28 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-col-center {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin media-large {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin media-medium {
+  @media only screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin media-smol {
+  @media only screen and (min-width: 625px) {
+    @content;
+  }
+}
