@@ -1,0 +1,114 @@
+.sign_up_bg {
+  min-height: calc(95vh - var(--nav-height));
+
+  &::before {
+    display: block;
+    position: fixed;
+    top: 2vh;
+    background: var(--foreground-hex);
+    left: 60%;
+    content: "";
+    width: 39%;
+    height: 95vh;
+    z-index: -1;
+  }
+}
+
+.view {
+  display: flex;
+  padding-right: 4rem;
+  gap: 3rem;
+
+  flex-direction: column;
+  // transition: 200ms ease-out;
+
+  animation: fade 250ms ease-in forwards;
+
+  input[type=text] {
+    background: transparent;
+    border-bottom: 1px solid black;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  label {
+    font-weight: 600;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  animation: slide 250ms ease-out both;
+}
+
+.view_section {
+  width: 100%;
+}
+
+.form_buttons {
+  display: flex;
+  gap: 1rem;
+
+  button {
+    padding: 0.75rem 2.5rem;
+    background: var(--foreground-hex);
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    border: none;
+
+    &:disabled {
+      background: var(--background-hex);
+      border: 2px solid var(--foreground-hex);
+    }
+  }
+}
+
+.forms_section {
+  display: flex;
+  flex: 0.6;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 3rem 0;
+}
+
+.image_section {
+  display: flex;
+  flex: 0.4;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.75);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
