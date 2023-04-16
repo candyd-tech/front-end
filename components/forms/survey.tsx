@@ -29,7 +29,7 @@ export const SurveyViews: ReactNode[] = [
     </div>
 
     <div>
-      <label htmlFor="">Type of prompts you'd like to get</label>
+      <label htmlFor="">Type of prompts you&apos;d like to get</label>
       <input type="text" />
     </div>
   </>,
