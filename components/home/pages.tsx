@@ -1,14 +1,15 @@
-import Image from "next/image"
 import { ReactNode } from "react"
+import styles from "@/styles/landing.module.scss"
+import Image from "next/image"
 
 interface HomeSlidePropsType {
-  imgUrl: string
+  imgUrl?: string
   heading: string
   paragraph: string
   children?: ReactNode
 }
 
-export const HomeSlide = ({imgUrl, heading, paragraph, children}: HomeSlidePropsType) => {
+export const HomeSlide = ({heading, paragraph, children}: HomeSlidePropsType) => {
   return <section className={`flex px-20 p-4 min-h-screen`}>
     <div className={`flex-[1] flex justify-center flex-col gap-8`}>
       <h1 className={`text-7xl font-bold`}>{heading}</h1>
@@ -17,6 +18,16 @@ export const HomeSlide = ({imgUrl, heading, paragraph, children}: HomeSlideProps
 
     <div className={`flex-[1] p-4 flex items-center justify-center`}>
       {children}
+      <div className={`p-16 ${styles.pageImages}`}>
+        <Image
+          src={"/s.webp"}
+          alt={"Hangover"}
+          fill
+          style={{
+            objectFit: 'scale-down'
+          }}
+        />
+      </div>
     </div>
   </section>
 }

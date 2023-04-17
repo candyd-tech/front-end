@@ -5,7 +5,8 @@
  - Create Landing Page Components
  - Landing page sliders
  - Responsiveness across the board
- - Form integration with firebase
 
+ - Form integration with firebase
  - Animation for the page transitions !important
  - Color Palette
+ - SEO

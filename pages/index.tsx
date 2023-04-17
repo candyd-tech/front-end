@@ -20,14 +20,6 @@ const Home = () => {
           heading={"Scan and Compete"}
           paragraph={"Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition"}
         >
-          <div className={`p-16`}>
-            <Image
-              src={"/s.webp"}
-              alt={"Hangover"}
-              width={450}
-              height={450}
-            />
-          </div>
         </HomeSlide>
       </div>
 
@@ -37,12 +29,6 @@ const Home = () => {
           heading={"Personalize and Revitalize"}
           paragraph={"Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment."}
         >
-          <Image
-            src={"/s.webp"}
-            alt={"Hangover"}
-            width={450}
-            height={450}
-          />
         </HomeSlide>
       </div>
 
@@ -52,12 +38,6 @@ const Home = () => {
           heading={"Post and Retweet"}
           paragraph={"Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,"}
         >
-          <Image
-            src={"/s.webp"}
-            alt={"Hangover"}
-            width={450}
-            height={450}
-          />
         </HomeSlide>
       </div>
 
@@ -67,12 +47,6 @@ const Home = () => {
           heading={"Dedicate and Share"}
           paragraph={"Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "}
         >
-          <Image
-            src={"/s.webp"}
-            alt={"Hangover"}
-            width={450}
-            height={450}
-          />
         </HomeSlide>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "@/styles/forms.module.scss"
+import {ref, push} from "firebase/database"
+import { db } from "../firebase";
 
 interface FormComponentPropsType {
   views: ReactNode[]
@@ -47,6 +49,11 @@ const FormComponent = ({views, currentView, setCurrentView}: FormComponentPropsT
           currentView === views.length && <button
             disabled={currentView != views.length ? true : false}
             onClick={() => {}}
+            onSubmit={() => {
+              push(ref(db, 'users/'), {
+                something: "in the way",
+              })
+            }}
           >Submit</button>
         }
       </div>
