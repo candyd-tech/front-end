@@ -7,6 +7,8 @@
   --background-rgb: 0, 132, 150;
   --text-primary-rgb: 0, 192, 220;
   --text-secondary-rgb: 0, 255, 203;
+// abc5ff rgb(171, 197, 255)
+// b1b3ff rgb(177, 179, 255)
 
   --foreground-hex: #004b67;
   --background-hex: #008496;
@@ -28,4 +30,8 @@
 
 body {
   background: rgb(var(--background-rgb));
+}
+
+.fp-watermark {
+  display: none;
 }

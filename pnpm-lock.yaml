@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fullpage/react-fullpage': ^0.1.38
   '@types/node': 18.15.11
   '@types/react': 18.0.35
   '@types/react-dom': 18.0.11
@@ -17,6 +18,7 @@ specifiers:
   typescript: 5.0.4
 
 dependencies:
+  '@fullpage/react-fullpage': 0.1.38
   '@types/node': 18.15.11
   '@types/react': 18.0.35
   '@types/react-dom': 18.0.11
@@ -35,6 +37,14 @@ devDependencies:
   sass: 1.62.0
 
 packages:
+
+  /@babel/polyfill/7.12.1:
+    resolution: {integrity: sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==}
+    deprecated: 🚨 This package has been deprecated in favor of separate inclusion of a polyfill and regenerator-runtime (when needed). See the @babel/polyfill docs (https://babeljs.io/docs/en/babel-polyfill) for more information.
+    dependencies:
+      core-js: 2.6.12
+      regenerator-runtime: 0.13.11
+    dev: false
 
   /@babel/runtime/7.21.0:
     resolution: {integrity: sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==}
@@ -527,6 +537,13 @@ packages:
 
   /@firebase/webchannel-wrapper/0.9.0:
     resolution: {integrity: sha512-BpiZLBWdLFw+qFel9p3Zs1jD6QmH7Ii4aTDu6+vx8ShdidChZUXqDhYJly4ZjSgQh54miXbBgBrk0S+jTIh/Qg==}
+    dev: false
+
+  /@fullpage/react-fullpage/0.1.38:
+    resolution: {integrity: sha512-1o/KWUe5JkpDLM2L8PNEuR1wYHiwk/pmFIpK5Hy6JcvoqzWfkjoVypRn4pAjEAC4kzv0rqSiFLgtlmVeYkn/4A==}
+    dependencies:
+      '@babel/polyfill': 7.12.1
+      fullpage.js: 4.0.19
     dev: false
 
   /@grpc/grpc-js/1.7.3:
@@ -1151,6 +1168,12 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: false
 
+  /core-js/2.6.12:
+    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+    requiresBuild: true
+    dev: false
+
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -1770,6 +1793,10 @@ packages:
     os: [darwin]
     requiresBuild: true
     optional: true
+
+  /fullpage.js/4.0.19:
+    resolution: {integrity: sha512-iDbxKEU4mpeoYJzsW+P0B+EK7586mNpBjES01U/QWh5FbDY8r1EqZPrGPciZVZHdJoz6zUze5q/PGOc4SQoqow==}
+    dev: false
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}

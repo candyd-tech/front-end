@@ -1,27 +1,31 @@
-import Landing from "@/components/home/landing";
-import Polaroid from "@/components/home/polaroids";
-import { HomeSlide } from "@/components/home/pages";
-import Nav from "@/components/nav";
-import styles from "@/styles/landing.module.scss"
-import ReactFullpage from '@fullpage/react-fullpage';
-import homePages from "@/components/home/homeSlides";
+import ReactFullpage from "@fullpage/react-fullpage";
+import { ReactNode } from "react";
+import Landing from "./landing";
+import { HomeSlide } from "./pages";
+import Polaroid from "./polaroids";
 
-const _Home = () => {
-  return (
-    <div className={ `min-h-screen` }>
-      <Nav />
-      <div className={`md:pt-[--nav-height] h-screen`}>
-        <div className={`z-[-1] ${styles.background}`}> </div>
+interface slideInterface {
+  key: string,
+  component: ReactNode
+}
+
+const HomeData: slideInterface[] = [
+  {
+    key: "landing",
+    component: <div className={`md:pt-[--nav-height] h-screen`}>
+        <div className={`z-[-1]`}> </div>
         <Landing />
       </div>
-
-      <HomeSlide
+  },
+  {
+    key: "slide_scan",
+    component: <HomeSlide
         heading={"Scan, Snap and Save"}
         paragraph={"Immerse yourself in campus life all over again by completing tasks scattered across key locations. QR codes will guide you as you capture memories and upload them for future reminiscing."}
       >
         <Polaroid
           classes={"relative rotate-[-10deg]"}
-          imageUrl="/one/s.jpg"
+          imageUrl="/s.jpg"
           alt={"picture of a building"}
           text={"Mess Laaawnnnss!!"}
         />
@@ -32,9 +36,10 @@ const _Home = () => {
           text={"Nights"}
         />
       </HomeSlide>
-
-
-      <HomeSlide
+  },
+  {
+    key: "slide_surprise",
+    component: <HomeSlide
         heading={"Surprise your friends "}
         paragraph={`
           Make your friends feel special by adding dedicated moments to their profile as a surprise gesture.
@@ -64,8 +69,10 @@ const _Home = () => {
         </Polaroid>
       </HomeSlide>
 
-
-      <HomeSlide
+    },
+  {
+    key: "slide_memory",
+    component: <HomeSlide
         heading={"Memory Mementos"}
         paragraph={`
           Transform your digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. 
@@ -94,32 +101,7 @@ const _Home = () => {
           <p>@ayush @mehul</p>
         </Polaroid>
       </HomeSlide>
-    </div>
-  )
-}
+    },
+]
 
-// <ReactFullpage></ReactFullpage>
-const Home = () => {
-  return (
-    <div className={ `min-h-screen` }>
-      <ReactFullpage
-        navigation
-        dragAndMove={"fingersonly"}
-        parallax={true}
-        render={() =>
-        (
-          <ReactFullpage.Wrapper>
-            {homePages.map(({ key, component }) => (
-              <div key={key} className="section">
-                {component}
-              </div>
-            ))}
-          </ReactFullpage.Wrapper>
-        )
-        }
-      />
-    </div>
-  )
-}
-
-export default Home
+export default HomeData
