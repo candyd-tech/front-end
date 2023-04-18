@@ -1,8 +1,8 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import styles from "@/styles/forms.module.scss"
-import {ref, push} from "firebase/database"
 import { db } from "../firebase";
 import { Poppins } from "next/font/google"
+import { addDoc, collection } from "firebase/firestore";
 
 const poppins800 = Poppins({
   weight: '700',
@@ -32,7 +32,30 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
       </h1>
 
       <form className={`${styles.view_section}`}>
-        {
+        <div className={`
+          ${styles.view} ${styles.active} gap-8 md:gap-12
+        `}>
+          <div>
+            <label htmlFor="">Name</label>
+            <input type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="">Email</label>
+            <input type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="">Student, Faculty or Employee</label>
+            <input type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="">What about the product excites you?</label>
+            <input type="text" />
+          </div>
+        </div>
+        {/*
           views.map(( view, index ) => {
             return (
               <div key={index + 1} className={`
@@ -43,10 +66,11 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
               </div>
             )
           })
-        }
+        */}
       </form>
 
       <div className={`${styles.form_buttons} flex flex-col gap-4 md:gap-10 w-full`}>
+        {/*
         <div className="flex justify-between gap-4 w-full">
           <button
             onClick={prevView}
@@ -59,21 +83,26 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
             className={``}
             disabled={currentView >= views.length ? true : false}
           >Next</button>
-        </div>
-
-        {
-          <button
-            className={`
-              ${currentView != views.length ? 'opacity-0' : 'opacity-100'}
-            `}
-            disabled={currentView != views.length ? true : false}
-            onSubmit={() => {
-              push(ref(db, 'users/'), {
-                something: "in the way",
+      </div>
+            ${currentView != views.length ? 'opacity-0' : 'opacity-100'}
+*/}
+        <button
+          className={`
+          `}
+          onClick={async () => {
+            // push(ref(db, 'users/'), {
+            //   something: "in the way",
+            // })
+            try {
+              const docRef = await addDoc(collection(db, "formData"), {
+                "something": "in the way"
               })
-            }}
-          >Submit</button>
-        }
+              console.log(docRef.id);
+            } catch (e) {
+              console.error(e);
+            }
+          }}
+        >Submit</button>
       </div>
     </div>
   )
