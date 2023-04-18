@@ -2,16 +2,18 @@
 
 
 .sign_up_bg {
-  &::before {
-    display: block;
-    position: fixed;
-    top: 2vh;
-    background: var(--foreground-hex);
-    left: 60%;
-    content: "";
-    width: 39%;
-    height: 95vh;
-    z-index: -1;
+  @include media-large {
+    &::before {
+      display: block;
+      position: fixed;
+      top: 2vh;
+      background: var(--foreground-hex);
+      left: 60%;
+      content: "";
+      width: 39%;
+      height: 95vh;
+      z-index: -1;
+    }
   }
 }
 

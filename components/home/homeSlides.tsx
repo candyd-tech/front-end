@@ -1,9 +1,9 @@
-import ReactFullpage from "@fullpage/react-fullpage";
 import { ReactNode } from "react";
 import Landing from "./landing";
 import { HomeSlide } from "./pages";
 import styles from "@/styles/landing.module.scss"
 import Polaroid from "./polaroids";
+import Nav from "../nav";
 
 interface slideInterface {
   key: string,
@@ -15,6 +15,7 @@ const homePages: slideInterface[] = [
     key: "landing",
     component: <div className={`md:pt-[--nav-height] h-screen`}>
         <div className={`z-[-1] ${styles.background}`}> </div>
+        <Nav />
         <Landing />
       </div>
   },
@@ -84,7 +85,7 @@ const homePages: slideInterface[] = [
           classes={`
             relative rotate-[12deg]
           `}
-          imageUrl="/tt.png"
+          imageUrl="/two/tt.png"
           alt={"TT Table"}
         >
           <p>Post breakfast TT!</p>
