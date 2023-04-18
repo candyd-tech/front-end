@@ -2,6 +2,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import { ReactNode } from "react";
 import Landing from "./landing";
 import { HomeSlide } from "./pages";
+import styles from "@/styles/landing.module.scss"
 import Polaroid from "./polaroids";
 
 interface slideInterface {
@@ -9,11 +10,11 @@ interface slideInterface {
   component: ReactNode
 }
 
-const HomeData: slideInterface[] = [
+const homePages: slideInterface[] = [
   {
     key: "landing",
     component: <div className={`md:pt-[--nav-height] h-screen`}>
-        <div className={`z-[-1]`}> </div>
+        <div className={`z-[-1] ${styles.background}`}> </div>
         <Landing />
       </div>
   },
@@ -25,13 +26,13 @@ const HomeData: slideInterface[] = [
       >
         <Polaroid
           classes={"relative rotate-[-10deg]"}
-          imageUrl="/s.jpg"
+          imageUrl={ "/one/s.jpg" }
           alt={"picture of a building"}
           text={"Mess Laaawnnnss!!"}
         />
         <Polaroid
           classes={"relative rotate-[12deg] translate-x-[-2rem]"}
-          imageUrl="/one/nights.jpg"
+          imageUrl={"/one/nights.jpg"}
           alt={"nights"}
           text={"Nights"}
         />
@@ -50,7 +51,7 @@ const HomeData: slideInterface[] = [
           classes={`
             relative rotate-[12deg]
           `}
-          imageUrl="/tt.png"
+          imageUrl="/two/tt.png"
           alt={"TT Table"}
         >
           <p>Post breakfast TT!</p>
@@ -104,4 +105,4 @@ const HomeData: slideInterface[] = [
     },
 ]
 
-export default HomeData
+export default homePages
