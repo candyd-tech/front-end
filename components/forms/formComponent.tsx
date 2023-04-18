@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
 import styles from "@/styles/forms.module.scss"
 import { db } from "../firebase";
 import { Poppins } from "next/font/google"
@@ -24,6 +24,10 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
   // const prevView = () => {
   //   setCurrentView( currentView <= 1 ? 1 : currentView - 1);
   // }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [type, setType] = useState("");
+  const [excitment, setExcitment] = useState("");
 
   return (
     <div className="pt-8 flex flex-col gap-10 w-full md:w-[85%] items-start justify-between">
@@ -41,22 +45,22 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
         `}>
           <div>
             <label htmlFor="">Name</label>
-            <input type="text" />
+            <input value={name} onChange={e => setName(e.target.value)}type="text" />
           </div>
 
           <div>
             <label htmlFor="">Email</label>
-            <input type="text" />
+            <input value={email} onChange={e => setEmail(e.target.value)} type="email" />
           </div>
 
           <div>
             <label htmlFor="">Student, Faculty or Employee</label>
-            <input type="text" />
+            <input value={type} onChange={e => setType(e.target.value)} type="text" />
           </div>
 
           <div>
             <label htmlFor="">What about the product excites you?</label>
-            <input type="text" />
+            <input value={excitment} onChange={e => setExcitment(e.target.value)} type="text" />
           </div>
         </div>
         {/*
@@ -94,12 +98,12 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
           className={`
           `}
           onClick={async () => {
-            // push(ref(db, 'users/'), {
-            //   something: "in the way",
-            // })
             try {
               const docRef = await addDoc(collection(db, "formData"), {
-                "something": "in the way"
+                name,
+                email,
+                excitment,
+                type
               })
               console.log(docRef.id);
             } catch (e) {

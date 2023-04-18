@@ -23,7 +23,7 @@
 
   animation: fade 250ms ease-in forwards;
 
-  input[type=text] {
+  input[type=text], input[type=email] {
     background: transparent;
     border-bottom: 1px solid black;
   }
