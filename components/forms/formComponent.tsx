@@ -3,6 +3,7 @@ import styles from "@/styles/forms.module.scss"
 import { db } from "../firebase";
 import { Poppins } from "next/font/google"
 import { addDoc, collection } from "firebase/firestore";
+import { useRouter } from "next/router";
 
 const poppins800 = Poppins({
   weight: '700',
@@ -17,6 +18,7 @@ interface FormComponentPropsType {
 }
 
 const FormComponent = ({formType, views, currentView, setCurrentView}: FormComponentPropsType) => {
+  const router = useRouter()
   // const nextView = () => {
   //   setCurrentView( currentView >= views.length ? views.length : currentView + 1);
   // }
@@ -106,6 +108,12 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
                 type
               })
               console.log(docRef.id);
+              setName("")
+              setEmail("")
+              setExcitment("")
+              setType("")
+
+              router.push("/")
             } catch (e) {
               console.error(e);
             }
