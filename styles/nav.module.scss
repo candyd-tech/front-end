@@ -1,4 +1,6 @@
 .nav {
-  /* color: rgb(var(--background-rgb)); */
   height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
 }

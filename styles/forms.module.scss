@@ -1,6 +1,7 @@
-.sign_up_bg {
-  min-height: calc(95vh - var(--nav-height));
+@use "abstracts/index" as *;
 
+
+.sign_up_bg {
   &::before {
     display: block;
     position: fixed;
@@ -16,11 +17,8 @@
 
 .view {
   display: flex;
-  padding-right: 4rem;
   gap: 3rem;
-
   flex-direction: column;
-  // transition: 200ms ease-out;
 
   animation: fade 250ms ease-in forwards;
 
@@ -37,6 +35,11 @@
 
   label {
     font-weight: 600;
+    font-size: 0.85rem;
+
+    @include media-large {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -53,17 +56,25 @@
 }
 
 .form_buttons {
-  display: flex;
-  gap: 1rem;
+  & > div > button {
+    padding: 0.25rem 1.0rem;
+    background: var(--foreground-hex);
+    border-radius: 5px;
+    color: white;
+    font-weight: lighter;
+    border: none;
+  }
 
-  button {
+  & > button {
     padding: 0.75rem 2.5rem;
     background: var(--foreground-hex);
     border-radius: 50px;
     color: white;
     font-weight: bold;
     border: none;
+  }
 
+  button {
     &:disabled {
       background: var(--background-hex);
       border: 2px solid var(--foreground-hex);
@@ -73,18 +84,23 @@
 
 .forms_section {
   display: flex;
-  flex: 0.6;
   flex-direction: column;
   justify-content: space-between;
   gap: 4rem;
-  padding: 3rem 0;
 }
 
 .image_section {
-  display: flex;
-  flex: 0.4;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+
+  & > div {
+    height: 20rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 75%;
+  }
 }
 
 @keyframes slide {

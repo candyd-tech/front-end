@@ -3,7 +3,6 @@
 
 .landing_button {
   padding: 0.75rem 2.5rem;
-  // background: red;
   border-radius: 30px;
   align-self: flex-start;
 }
@@ -21,15 +20,16 @@
     ) left top;
   background-size: cover;
   background-position: top;
-  clip-path: polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
+  clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 61.51%, 1% 78.28%);
+    // polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
 
-  @include media-smol {
-    clip-path: polygon();
-  }
-
-  @include media-large {
-    clip-path: polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
-  }
+  // @include media-smol {
+  //   clip-path: polygon();
+  // }
+  //
+  // @include media-large {
+  //   clip-path: polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
+  // }
 }
 
 .section {

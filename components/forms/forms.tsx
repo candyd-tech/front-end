@@ -6,6 +6,14 @@ import { SurveyViews } from "./survey";
 import { JoinViews } from "./join";
 import FormComponent from "./formComponent";
 
+const JOIN_IMAGES: string[] = [
+  "sign_up.svg", "completed.svg"
+]
+
+const SURVEY_IMAGES: string[] = [
+  "sign_up.svg", "sign_up.svg", "sign_up.svg", "sign_up.svg", "completed.svg"
+]
+
 const Forms = ({formType}: {formType: "survey" | "join"}) => {
   const [currentView, setCurrentView] = useState(1);
 
@@ -18,26 +26,46 @@ const Forms = ({formType}: {formType: "survey" | "join"}) => {
 
   return (
     <>
-      <div className={`${styles.forms_section}`}>
+      <div className={`${styles.forms_section} w-full md:w-[1/2] flex-1 lg:flex-[0.6]`}>
         {formType === "survey" ? <FormComponent
             currentView={currentView}
             setCurrentView={setCurrentView}
             views={SurveyViews}
+            formType={formType}
           /> : <FormComponent
             currentView={currentView}
             setCurrentView={setCurrentView}
             views={JoinViews} 
+            formType={formType}
           /> 
         }
       </div>
 
-      <div className={`${styles.image_section}`}>
-        <Image
-          src={"sign_up.svg"}
-          alt={"Sign Up"}
-          width={450}
-          height={450}
-        />
+      <div className={`${styles.image_section} flex-1 lg:flex-[0.4] hidden lg:flex`}>
+        { formType === "survey" ? 
+            SURVEY_IMAGES.map(( imgage, index ) => {
+              return <div className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
+                <Image
+                  src={imgage}
+                  alt={"Sign Up"}
+                  fill style={{
+                    objectFit: 'scale-down'
+                  }}
+                />
+              </div>
+            }) : 
+            JOIN_IMAGES.map(( imgage, index ) => {
+              return <div className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
+                <Image
+                  src={imgage}
+                  alt={"Sign Up"}
+                  fill style={{
+                    objectFit: 'scale-down'
+                  }}
+                />
+              </div>
+            })
+        }
       </div>
     </>
   )

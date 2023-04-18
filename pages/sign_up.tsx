@@ -24,21 +24,21 @@ export default function SignUp() {
   return (
     <>
       <Nav />
-      <div className={ `min-h-screen p-8 ${styles.sign_up_bg}` }>
-        <section className={`w-full ${showForm ? 'hidden' : 'flex'}`}>
-          <div className={`${styles.forms_section}`}>
+      <div className={ `px-8 pr-8 md:pr-0 lg:pr-8 min-h-screen flex items-center ${styles.sign_up_bg}` }>
+        <section className={`h-full w-full ${showForm ? 'hidden' : 'flex'}`}>
+          <div className={`${styles.forms_section} flex-[1] md:flex-[0.6]`}>
             <div className={`flex flex-col gap-8`}>
-               <h1 className={`${poppins800.className} text-6xl`}>
+               <h1 className={`${poppins800.className} text-2xl md:text-3xl lg:text-6xl`}>
                 Show us your interset <br /> or Sign up for early access
               </h1>
 
-               <p className="text-xl">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. </p>
+               <p className="text-sm md:tex-base lg:text-xl">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. </p>
             </div>
 
-            <div className={`flex flex-row gap-4`}>
+            <div className={`flex flex-col md:flex-row gap-4`}>
               <Button 
                 font={poppins400.className}
-                className={`bg-[--foreground-hex] py-3 px-10 rounded-[30px] text-white`}
+                className={`bg-[--foreground-hex] py-3 px-4 md:px-10 rounded-[30px] font-thin md:font-normal text-white text-xs md:text-base`}
                 text={"Sign Up Now"}
                 onClickButton={() => {
                   setShowForm(true);
@@ -47,7 +47,7 @@ export default function SignUp() {
               />
               <Button 
                 font={poppins400.className}
-                className={`bg-[--foreground-hex] py-3 px-10 rounded-[30px] text-white`}
+                className={`bg-[--foreground-hex] py-3 px-1 md:px-10 rounded-[30px] font-thin md:font-normal text-white text-xs md:text-base`}
                 text={"Take a Survey"}
                 onClickButton={() => {
                   setShowForm(true);
@@ -57,7 +57,7 @@ export default function SignUp() {
             </div>
           </div>
 
-          <div className={`${styles.image_section}`}>
+          <div className={`${styles.image_section} flex-[1] md:flex-[0.6] hidden md:flex`}>
             <Image
               src={"sign_up.svg"}
               alt={"Sign Up"}
@@ -67,7 +67,7 @@ export default function SignUp() {
           </div>
         </section>
 
-        <section className={ `${showForm ? 'flex' : 'hidden'}` }>
+        <section className={ `min-h-[87vh] p-[3rem_0] w-full ${showForm ? 'flex' : 'hidden'}` }>
           <Forms formType={formType}/>
         </section>
       </div>

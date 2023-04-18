@@ -21,15 +21,16 @@ interface LandingPropsType {
 const Landing = ({isClipped}: LandingPropsType) => {
   return (
     <section className={ `flex flex-col md:flex-row h-full ${styles.section} z-10` }>
-      <div className={ `${isClipped ? 'text-white' : 'text-black'} ${styles.sections}
-        p-12 pt-28 gap-8 flex flex-col justify-start items-start` }
+      <div className={ `text-black ${styles.sections}
+        p-12 md:pl-20 pt-28 gap-8 flex flex-col justify-start items-start` }
       >
         <h1 className={`font-bold leading-[1.2] md:leading-[1.2] text-3xl md:text-6xl ${poppins800.className}`}>
-          Embark on a <br /> nostalgic quest with your friends.
+          Capture your <br /> Candyd moments
         </h1>
 
-        <p className={`font-semibold text-[1rem] md:text-3xl`}>
-          Candyd curates personalised experiences to create memories and capture the moment.
+        <p className={`font-medium text-[1rem] md:text-xl`}>
+          Embark on a 10-day campus quest with your friends, completing tasks and following clues to create your own memory lane. <br />
+          Sign up for an offbeat and vibrant way of capturing your campus experience! 
         </p>
 
         <div className={`${ 'text-black' }`}>
@@ -41,21 +42,24 @@ const Landing = ({isClipped}: LandingPropsType) => {
               `}
               onClickButton={() => {}}
               font={poppins400.className}
-              text={"Fill the Forms"}
+              text={"Sign Up"}
             />
           </Link>
         </div>
       </div>
 
       <div className={ `${styles.image_section} ${styles.sections}
-        p-6 md:p-0 pt-12 md:pt-12 md:pl-16` }
+        p-6 md:p-0 pt-12 md:pt-12 md:pl-16 flex pl-24` }
       >
-        <Image
-          src={ isClipped ? "remember.svg" : "remember_color.svg" }
-          alt="Remember Image"
-          width={450}
-          height={450}
-        />
+        <div className={`relative top-0 left-0 overflow-hidden w-[30rem] h-[30rem]`}>
+          <Image
+            src={"remember.svg"}
+            alt="Remember Image"
+            fill style={{
+              objectFit: "scale-down"
+            }}
+          />
+        </div>
       </div>
     </section>
   )
