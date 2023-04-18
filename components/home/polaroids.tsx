@@ -19,10 +19,13 @@ interface PolaroidPropsType {
 
 const Polaroid = ({text, alt, imageUrl, classes, children}: PolaroidPropsType) => {
   return <div className={`
-    flex pt-[0.5rem] flex-col bg-gray-400 w-[8rem] h-[12rem] md:w-[12rem] md:h-[16rem] lg:w-[18rem] lg:h-[22rem] drop-shadow-2xl ${classes}
+    flex pt-[0.5rem] flex-col bg-gray-400 drop-shadow-2xl ${classes}
+    w-[10rem] h-[14rem] md:w-[12rem] md:h-[16rem] lg:w-[18rem] lg:h-[22rem]
     ${styles.polaroid} rounded-sm
   `}>
-    <div className="relative left-[0.5rem] w-[7rem] h-[8rem] md:w-[11rem] md:h-[12rem] lg:w-[17rem] lg:h-[18rem] border-black border-[1px] rounded-sm">
+    <div className={`relative border-black border-[1px] rounded-sm
+      left-[0.5rem] w-[9rem] h-[10rem] md:w-[11rem] md:h-[12rem] lg:w-[17rem] lg:h-[18rem]`}
+    >
       <Image
         src={imageUrl}
         alt={alt}
