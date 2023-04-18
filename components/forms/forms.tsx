@@ -44,7 +44,7 @@ const Forms = ({formType}: {formType: "survey" | "join"}) => {
       <div className={`${styles.image_section} flex-1 lg:flex-[0.4] hidden lg:flex`}>
         { formType === "survey" ? 
             SURVEY_IMAGES.map(( imgage, index ) => {
-              return <div className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
+              return <div key={index} className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
                 <Image
                   src={imgage}
                   alt={"Sign Up"}
@@ -55,7 +55,7 @@ const Forms = ({formType}: {formType: "survey" | "join"}) => {
               </div>
             }) : 
             JOIN_IMAGES.map(( imgage, index ) => {
-              return <div className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
+              return <div key={index} className={`${currentView === index + 1 ? styles.active : styles.hidden }`}>
                 <Image
                   src={imgage}
                   alt={"Sign Up"}
