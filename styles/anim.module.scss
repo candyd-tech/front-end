@@ -1,0 +1,61 @@
+/* arrow in homepage */
+@keyframes in-out {
+  from {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}
+
+@keyframes upper {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes middle {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  --anim-delay: 2.5s
+}
+
+.upperPath {
+  animation: upper var(--anim-delay);
+  animation-iteration-count: infinite;
+}
+
+.middlePath {
+  animation: middle var(--anim-delay);
+  animation-iteration-count: infinite;
+}
+
+.lowerPath {
+  animation: in-out var(--anim-delay);
+  animation-iteration-count: infinite;
+}

@@ -3,6 +3,7 @@ import styles from "@/styles/landing.module.scss"
 import { Poppins } from "next/font/google"
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowBottom } from "../icons";
 
 const poppins800 = Poppins({
   weight: '700',
@@ -20,7 +21,7 @@ interface LandingPropsType {
 
 const Landing = ({isClipped}: LandingPropsType) => {
   return (
-    <section className={ `flex flex-col md:flex-row h-full ${styles.section} z-10` }>
+    <section className={ `relative flex flex-col md:flex-row h-full ${styles.section} z-10` }>
       <div className={ `text-black ${styles.sections}
         p-12 md:p-6 lg:p-12 md:pl-6 lg:pl-20 pt-28 md:pt-28 lg:pt-32 gap-8
         flex flex-col justify-start md:justify-start items-start` }
@@ -61,6 +62,10 @@ const Landing = ({isClipped}: LandingPropsType) => {
             }}
           />
         </div>
+      </div>
+
+      <div className="w-[3rem] h-[3rem] absolute flex items-center justify-center bottom-8 left-1/2">
+        <ArrowBottom />
       </div>
     </section>
   )
