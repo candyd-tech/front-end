@@ -103,7 +103,9 @@ const Home = () => {
   return (
     <div className={ `min-h-screen` }>
       <ReactFullpage
+        licenseKey={"gplv3-license"}
         navigation
+        credits= {{enabled: true, label: 'Made with fullPage.js', position: 'right' }}
         dragAndMove={"fingersonly"}
         parallax={true}
         render={() =>
