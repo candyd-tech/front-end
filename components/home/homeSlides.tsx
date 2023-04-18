@@ -5,6 +5,7 @@ import styles from "@/styles/landing.module.scss"
 import Polaroid from "./polaroids";
 import Nav from "../nav";
 import Image from "next/image";
+import pstyles from "@/styles/polaroid.module.scss"
 
 interface slideInterface {
   key: string,
@@ -30,7 +31,7 @@ const homePages: slideInterface[] = [
           classes={"relative rotate-[-10deg]"}
           imageUrl={ "/one/s.jpg" }
           alt={"picture of a building"}
-          text={"Mess Laaawnnnss!!"}
+          text={"Mess Lawns!!"}
         />
         <Polaroid
           classes={"relative rotate-[12deg] translate-x-[-2rem]"}
@@ -81,7 +82,7 @@ const homePages: slideInterface[] = [
           Transform your digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical memento, one to treasure forever. 
         `}
       >
-        <div className="relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]">
+        <div className={ `${pstyles.polaroid} relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]` }>
           <Image
             src={"/three/chart.jpg"}
             alt={"Momento"}
@@ -91,7 +92,7 @@ const homePages: slideInterface[] = [
           />
         </div>
 
-        <div className="relative drop-shadow-lg rotate-[-5deg] translate-x-[-2rem] w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]">
+        <div className={ `${pstyles.polaroid} relative drop-shadow-lg rotate-[-5deg] translate-x-[-2rem] w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]` }>
           <Image
             src={"/three/mori.jpg"}
             alt={"Momento"}

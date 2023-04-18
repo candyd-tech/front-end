@@ -26,7 +26,7 @@ const Landing = ({isClipped}: LandingPropsType) => {
         flex flex-col justify-start md:justify-start items-start` }
       >
         <h1 className={`font-bold leading-[1.2] md:leading-[1.2] text-3xl md:text-4xl lg:text-6xl ${poppins800.className}`}>
-          Capture your <br /> Candyd moments
+          Capture your <br /> Candyd moments!
         </h1>
 
         <p className={`font-medium text-[1rem] md:text-[1rem] lg:text-xl`}>
