@@ -9,7 +9,7 @@ interface HomeSlidePropsType {
 
 export const HomeSlide = ({heading, paragraph, children}: HomeSlidePropsType) => {
   return <section className={`
-    flex flex-col md:flex-col lg:flex-row pt-24
+    flex flex-col md:flex-col lg:flex-row pt-24 justify-center
     md:pt-20 lg:pt-20 px-8 md:px-12 lg:px-20 p-4 min-h-screen
   `}>
     <div className={`flex-[1] flex justify-center flex-col gap-8`}>
