@@ -4,6 +4,7 @@ import { HomeSlide } from "./pages";
 import styles from "@/styles/landing.module.scss"
 import Polaroid from "./polaroids";
 import Nav from "../nav";
+import Image from "next/image";
 
 interface slideInterface {
   key: string,
@@ -13,7 +14,7 @@ interface slideInterface {
 const homePages: slideInterface[] = [
   {
     key: "landing",
-    component: <div className={`pt-[8rem] h-screen`}>
+    component: <div className={`pt-[4rem] h-screen`}>
         <div className={`z-[-1] ${styles.background}`}> </div>
         <Nav />
         <Landing />
@@ -81,27 +82,25 @@ const homePages: slideInterface[] = [
           Bring your digital profile to life in creative ways  and preserve your memories in a physical memento, one to treasure forever.  
         `}
       >
-        <Polaroid
-          classes={`
-            relative rotate-[12deg]
-          `}
-          imageUrl="/two/tt.png"
-          alt={"TT Table"}
-        >
-          <p>Post breakfast TT!</p>
-          <p>@vivan @mehul</p>
-        </Polaroid>
+        <div className="relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]">
+          <Image
+            src={"/three/momento.jpg"}
+            alt={"Momento"}
+            fill style={{
+              objectFit: "cover"
+            }}
+          />
+        </div>
 
-        <Polaroid
-          classes={`
-            relative rotate-[-30deg]
-          `}
-          imageUrl="/two/food.png"
-          alt={"TT Table"}
-        >
-          <p>These were always such a hit or miss!</p>
-          <p>@ayush @mehul</p>
-        </Polaroid>
+        <div className="relative drop-shadow-lg rotate-[-5deg] translate-x-[-2rem] w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]">
+          <Image
+            src={"/three/mori.jpg"}
+            alt={"Momento"}
+            fill style={{
+              objectFit: "cover"
+            }}
+          />
+        </div>
       </HomeSlide>
     },
 ]
