@@ -17,19 +17,23 @@ interface FormComponentPropsType {
 }
 
 const FormComponent = ({formType, views, currentView, setCurrentView}: FormComponentPropsType) => {
-  const nextView = () => {
-    setCurrentView( currentView >= views.length ? views.length : currentView + 1);
-  }
-
-  const prevView = () => {
-    setCurrentView( currentView <= 1 ? 1 : currentView - 1);
-  }
+  // const nextView = () => {
+  //   setCurrentView( currentView >= views.length ? views.length : currentView + 1);
+  // }
+  //
+  // const prevView = () => {
+  //   setCurrentView( currentView <= 1 ? 1 : currentView - 1);
+  // }
 
   return (
     <div className="pt-8 flex flex-col gap-10 w-full md:w-[85%] items-start justify-between">
-      <h1 className={ `text-2xl lg:text-4xl ${poppins800.className}` }>
-        {formType == "survey" ? "Survey" : "Join"}
-      </h1>
+      <div>
+        <h1 className={ `pb-3 text-2xl lg:text-4xl ${poppins800.className}` }>
+          {formType == "survey" ? "Be the First to Know!" : "Be the First to Know!"}
+        </h1>
+
+        <p>Sign up now to receive exclusive perks and benefits when our product launches!</p>
+      </div>
 
       <form className={`${styles.view_section}`}>
         <div className={`
@@ -102,7 +106,7 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
               console.error(e);
             }
           }}
-        >Submit</button>
+        >Join Now!</button>
       </div>
     </div>
   )

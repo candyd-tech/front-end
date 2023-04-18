@@ -7,11 +7,11 @@ import { JoinViews } from "./join";
 import FormComponent from "./formComponent";
 
 const JOIN_IMAGES: string[] = [
-  "sign_up.svg", "completed.svg"
+  "sign_up.svg", "sign_up.svg"
 ]
 
 const SURVEY_IMAGES: string[] = [
-  "sign_up.svg", "sign_up.svg", "sign_up.svg", "sign_up.svg", "completed.svg"
+  "sign_up.svg", "sign_up.svg", "sign_up.svg", "sign_up.svg", "sign_up.svg"
 ]
 
 const Forms = ({formType}: {formType: "survey" | "join"}) => {
