@@ -13,7 +13,7 @@ interface slideInterface {
 const homePages: slideInterface[] = [
   {
     key: "landing",
-    component: <div className={`pt-[--nav-height] h-screen`}>
+    component: <div className={`pt-[8rem] h-screen`}>
         <div className={`z-[-1] ${styles.background}`}> </div>
         <Nav />
         <Landing />
