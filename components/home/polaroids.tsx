@@ -35,7 +35,9 @@ const Polaroid = ({text, alt, imageUrl, classes, children}: PolaroidPropsType) =
       />
     </div>
 
-    <div className={`flex flex-col text-center text-sm lg:text-base items-center justify-center h-16 ${kalamLight.className}`}>
+    <div className={`flex flex-col text-center text-sm lg:text-base
+      items-center justify-center h-16 ${kalamLight.className}
+    `}>
       {text && <p>{text}</p>}
       {children}
     </div>

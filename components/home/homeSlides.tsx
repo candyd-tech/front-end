@@ -24,7 +24,7 @@ const homePages: slideInterface[] = [
     key: "slide_scan",
     component: <HomeSlide
         heading={"Scan, Snap and Save"}
-        paragraph={"Immerse yourself in campus life all over again by completing tasks scattered across key locations. QR codes will guide you as you capture memories and upload them for future reminiscing."}
+        paragraph={"Immerse yourself in campus life all over again by completing tasks scattered across key locations via QR codes."}
       >
         <Polaroid
           classes={"relative rotate-[-10deg]"}
@@ -78,13 +78,12 @@ const homePages: slideInterface[] = [
     component: <HomeSlide
         heading={"Memory Mementos"}
         paragraph={`
-          Transform your digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. 
-          Bring your digital profile to life in creative ways  and preserve your memories in a physical memento, one to treasure forever.  
+          Transform your digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical memento, one to treasure forever. 
         `}
       >
         <div className="relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]">
           <Image
-            src={"/three/momento.jpg"}
+            src={"/three/chart.jpg"}
             alt={"Momento"}
             fill style={{
               objectFit: "cover"

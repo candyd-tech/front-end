@@ -13,7 +13,7 @@ export const JoinViews: ReactNode[] = [
     </div>
 
     <div>
-      <label htmlFor="">Student, Faculty of Employee</label>
+      <label htmlFor="">Student, Faculty or Employee</label>
       <input type="text" />
     </div>
   </>,

@@ -23,7 +23,7 @@ const _Home = () => {
           classes={"relative rotate-[-10deg]"}
           imageUrl="/one/s.jpg"
           alt={"picture of a building"}
-          text={"Mess Laaawnnnss!!"}
+          text={"Mess Lawns!!"}
         />
         <Polaroid
           classes={"relative rotate-[12deg] translate-x-[-2rem]"}

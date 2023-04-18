@@ -18,8 +18,8 @@ const poppins400 = Poppins({
 })
 
 export default function SignUp() {
-  const [showForm, setShowForm] = useState(false);
-  const [formType, setFormType] = useState<"survey" | "join">("survey");
+  const [showForm, setShowForm] = useState(true);
+  const [formType, setFormType] = useState<"survey" | "join">("join");
 
   return (
     <>
