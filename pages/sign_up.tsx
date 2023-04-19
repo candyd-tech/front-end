@@ -5,6 +5,7 @@ import styles from "@/styles/forms.module.scss"
 import { Poppins } from "next/font/google"
 import Image from "next/image"
 import { useState } from "react"
+import Head from "next/head"
 
 
 const poppins800 = Poppins({
@@ -23,6 +24,11 @@ export default function SignUp() {
 
   return (
     <>
+      <Head>
+        <title>Be the First to Know!</title>
+        <meta name="description"
+          content="Sign up now to receive exclusive perks and benefits when our product launches" />
+      </Head>
       <Nav />
       <div className={ `px-8 pr-8 md:pr-0 lg:pr-8 min-h-screen flex items-center ${styles.sign_up_bg}` }>
         <section className={`h-full w-full ${showForm ? 'hidden' : 'flex'}`}>

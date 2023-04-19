@@ -5,6 +5,7 @@ import Nav from "@/components/nav";
 // import styles from "@/styles/landing.module.scss"
 import ReactFullpage from '@fullpage/react-fullpage';
 import homePages from "@/components/home/homeSlides";
+import Head from "next/head";
 
 const _Home = () => {
   return (
@@ -102,6 +103,11 @@ const _Home = () => {
 const Home = () => {
   return (
     <div className={ `min-h-screen` }>
+      <Head>
+        <title>Capture your Candyd Moments</title>
+        <meta name="description"
+          content="Campus quest with your friends, completing tasks and following clues to create your own memory lane. Sign up for an offbeat and vibrant way of capturing your campus experience!" />
+      </Head>
       <ReactFullpage
         licenseKey={"gplv3-license"}
         navigation
