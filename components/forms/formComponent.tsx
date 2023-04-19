@@ -66,7 +66,7 @@ const FormComponent = ({formType}: FormComponentPropsType) => {
           {formType == "survey" ? "Be the First to Know!" : "Be the First to Know!"}
         </h1>
 
-        <p>Sign up now to receive exclusive perks and benefits when our product launches!</p>
+        <p>Sign up now to receive exclusive perks and benefits when our product launches</p>
       </div>
 
       <form className={`${styles.view_section}`}>
@@ -128,7 +128,7 @@ const FormComponent = ({formType}: FormComponentPropsType) => {
           className={`
           `}
           onClick={submitForm}
-        >Join Now!</button>
+        >Join Now</button>
         <ToastContainer hideProgressBar={true} autoClose={3000} />
       </div>
     </div>

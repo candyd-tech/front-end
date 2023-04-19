@@ -25,7 +25,7 @@ const homePages: slideInterface[] = [
     key: "slide_scan",
     component: <HomeSlide
         heading={"Scan, Snap and Save"}
-        paragraph={"Immerse yourself in campus life all over again by completing tasks scattered across key locations via QR codes."}
+        paragraph={"Immerse yourself in campus life all over again by completing prompts scattered across key locations via QR codes."}
       >
         <Polaroid
           classes={"relative rotate-[-10deg]"}
