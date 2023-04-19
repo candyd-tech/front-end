@@ -6,8 +6,6 @@ export const ArrowBottom = () => (
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     id="Layer_1"
-    width={800}
-    height={800}
     fill="#000"
     transform="rotate(90)"
     className={`${styles.arrow}`}
