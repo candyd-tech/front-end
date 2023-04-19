@@ -26,6 +26,9 @@ const homePages: slideInterface[] = [
     component: <HomeSlide
         heading={"Scan, Snap and Save"}
         paragraph={"Immerse yourself in campus life all over again by completing prompts scattered across key locations via QR codes."}
+        secondline={`
+          Here's a peak - "Which place on campus reminds you of home?"
+        `}
       >
         <Polaroid
           classes={"relative rotate-[-10deg]"}
@@ -48,6 +51,9 @@ const homePages: slideInterface[] = [
         paragraph={`
           Make your friends feel special by adding dedicated moments to their profile as a surprise gesture.
           Store and create memories personalised to your liking. 
+        `}
+        secondline={`
+          Here's a peak - "What's your breakfast routine like?"
         `}
       >
         <Polaroid
@@ -79,7 +85,7 @@ const homePages: slideInterface[] = [
     component: <HomeSlide
         heading={"Memory Mementos"}
         paragraph={`
-          Transform your digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical memento, one to treasure forever. 
+          Transform your collected digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical memento, one to treasure forever. 
         `}
       >
         <div className={ `${pstyles.polaroid} relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]` }>
