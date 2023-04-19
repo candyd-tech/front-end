@@ -2,7 +2,7 @@ import Landing from "@/components/home/landing";
 import Polaroid from "@/components/home/polaroids";
 import { HomeSlide } from "@/components/home/pages";
 import Nav from "@/components/nav";
-import styles from "@/styles/landing.module.scss"
+// import styles from "@/styles/landing.module.scss"
 import ReactFullpage from '@fullpage/react-fullpage';
 import homePages from "@/components/home/homeSlides";
 
@@ -10,8 +10,8 @@ const _Home = () => {
   return (
     <div className={ `min-h-screen` }>
       <Nav />
-      <div className={`md:pt-[--nav-height] h-screen`}>
-        <div className={`z-[-1] ${styles.background}`}> </div>
+      <div className={`h-screen`}>
+        <div className={`z-[-1]`}> </div>
         <Landing />
       </div>
 
