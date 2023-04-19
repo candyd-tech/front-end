@@ -1,5 +1,8 @@
 @use "abstracts/index" as *;
 
+.toast {
+  color: black
+}
 
 .sign_up_bg {
   @include media-large {

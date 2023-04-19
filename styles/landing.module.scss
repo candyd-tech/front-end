@@ -7,31 +7,31 @@
   align-self: flex-start;
 }
 
-.background {
-  width: 100%;
-  height: calc(100vh - var(--nav-height));
-  position: absolute;
-  top: var(--nav-height);
-  bottom: 0;
-  background: linear-gradient(
-      to right,
-      rgb(var(--foreground-rgb)),
-      rgb(var(--foreground-rgb))
-    ) left top;
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 61.51%, 1% 78.28%);
-    // polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
-
-  @include media-smol {
-    clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 70.51%, 1% 83.28%);
-  }
-
-  @include media-large {
-    clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 61.51%, 1% 78.28%);
-  }
-}
-
+// .background {
+//   width: 100%;
+//   height: calc(100vh - var(--nav-height));
+//   position: absolute;
+//   top: var(--nav-height);
+//   bottom: 0;
+//   background: linear-gradient(
+//       to right,
+//       rgb(var(--foreground-rgb)),
+//       rgb(var(--foreground-rgb))
+//     ) left top;
+//   background-size: cover;
+//   background-position: top;
+//   clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 61.51%, 1% 78.28%);
+//     // polygon(1% 88vh, 99% 88vh, 99% 30.7%, 1% 78.28%);
+//
+//   @include media-smol {
+//     clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 70.51%, 1% 83.28%);
+//   }
+//
+//   @include media-large {
+//     clip-path: polygon(1% 88vh, 99% 88vh, 99.19% 61.51%, 1% 78.28%);
+//   }
+// }
+//
 .section {
   height: calc(100vh - var(--nav-height));
 

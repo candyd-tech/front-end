@@ -4,6 +4,9 @@ import { db } from "../firebase";
 import { Poppins } from "next/font/google"
 import { addDoc, collection } from "firebase/firestore";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const poppins800 = Poppins({
   weight: '700',
@@ -17,19 +20,44 @@ interface FormComponentPropsType {
   setCurrentView: Dispatch<SetStateAction<number>>
 }
 
-const FormComponent = ({formType, views, currentView, setCurrentView}: FormComponentPropsType) => {
+const FormComponent = ({formType}: FormComponentPropsType) => {
   const router = useRouter()
-  // const nextView = () => {
-  //   setCurrentView( currentView >= views.length ? views.length : currentView + 1);
-  // }
-  //
-  // const prevView = () => {
-  //   setCurrentView( currentView <= 1 ? 1 : currentView - 1);
-  // }
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [type, setType] = useState("");
   const [excitment, setExcitment] = useState("");
+
+  const submitForm = async () => {
+    const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,6}$/ 
+
+    if (name != "" && type != "" && excitment != "") {
+      if (re.test(email)) {
+        try {
+          const docRef = await addDoc(collection(db, "formData"), {
+            name, email, excitment, type
+          });
+          console.log(docRef.id);
+          setName("")
+          setEmail("")
+          setExcitment("")
+          setType("")
+
+          router.push("/")
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        toast("Please Enter a valid email address", {
+          className: styles.toast
+        })
+      }
+    } else {
+      toast("All fields must be field", {
+        className: styles.toast
+      })
+    }
+  }
 
   return (
     <div className="pt-8 flex flex-col gap-10 w-full md:w-[85%] items-start justify-between">
@@ -47,17 +75,17 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
         `}>
           <div>
             <label htmlFor="">Name</label>
-            <input value={name} onChange={e => setName(e.target.value)}type="text" />
+            <input required value={name} onChange={e => setName(e.target.value)}type="text" />
           </div>
 
           <div>
             <label htmlFor="">Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} type="email" />
+            <input required value={email} onChange={e => setEmail(e.target.value)} type="email" />
           </div>
 
           <div>
             <label htmlFor="">Student, Faculty or Employee</label>
-            <input value={type} onChange={e => setType(e.target.value)} type="text" />
+            <input required value={type} onChange={e => setType(e.target.value)} type="text" />
           </div>
 
           <div>
@@ -99,26 +127,9 @@ const FormComponent = ({formType, views, currentView, setCurrentView}: FormCompo
         <button
           className={`
           `}
-          onClick={async () => {
-            try {
-              const docRef = await addDoc(collection(db, "formData"), {
-                name,
-                email,
-                excitment,
-                type
-              })
-              console.log(docRef.id);
-              setName("")
-              setEmail("")
-              setExcitment("")
-              setType("")
-
-              router.push("/")
-            } catch (e) {
-              console.error(e);
-            }
-          }}
+          onClick={submitForm}
         >Join Now!</button>
+        <ToastContainer hideProgressBar={true} autoClose={3000} />
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ interface PolaroidPropsType {
 
 const Polaroid = ({text, alt, imageUrl, classes, children}: PolaroidPropsType) => {
   return <div className={`
-    flex pt-[0.5rem] flex-col bg-gray-400 drop-shadow-2xl ${classes}
+    flex pt-[0.5rem] flex-col bg-[#aaa] drop-shadow-2xl ${classes}
     w-[10rem] h-[14rem] md:w-[12rem] md:h-[16rem] lg:w-[18rem] lg:h-[22rem]
     ${styles.polaroid} rounded-sm
   `}>

@@ -40,6 +40,9 @@ const Landing = ({isClipped}: LandingPropsType) => {
             <Button
               className={`
                 ${styles.landing_button}
+                text-[--background-hex] border-[2px] border-[--foreground-hex]
+                transition duration-150
+                hover:text-[--foreground-hex] hover:border-[--foreground-hex] hover:bg-[--background-hex]
                 ${isClipped ? 'bg-[--background-hex]': 'bg-[--foreground-hex]'}
               `}
               onClickButton={() => {}}

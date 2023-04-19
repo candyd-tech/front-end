@@ -14,7 +14,7 @@ export const HomeSlide = ({heading, paragraph, children}: HomeSlidePropsType) =>
   `}>
     <div className={`flex-initial md:flex-[1] flex justify-center flex-col gap-8`}>
       <h1 className={`text-3xl md:text-3xl lg:text-6xl font-bold lg:font-bold`}>{heading}</h1>
-      <h2 className={`text-sm md:text-base lg:text-xl font-medium`}>{paragraph}</h2>
+      <p className={`text-sm md:text-base pr-4 lg:text-xl font-medium`}>{paragraph}</p>
     </div>
 
     <div className={`flex-initial md:flex-[1] p-0 lg:p-4 flex items-center justify-center`}>
