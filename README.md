@@ -4,6 +4,7 @@
  - Revamp the style of forms
  - Responsiveness across the board
  - Content
+ - Deploy
 
 
  - Landing page sliders
