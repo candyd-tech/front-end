@@ -6,7 +6,6 @@
  - Content
  - Deploy
 
-
  - Landing page sliders
  - Create Landing Page Components
      - Collage on polaroids
