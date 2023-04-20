@@ -27,7 +27,7 @@ const homePages: slideInterface[] = [
         heading={"Scan, Snap and Save"}
         paragraph={"Immerse yourself in campus life all over again by completing prompts scattered across key locations via QR codes."}
         secondline={`
-          Here's a peak - "Which place on campus reminds you of home?"
+          Here's a peek - "Which place on campus reminds you of home?"
         `}
       >
         <Polaroid
@@ -53,7 +53,7 @@ const homePages: slideInterface[] = [
           Store and create memories personalised to your liking. 
         `}
         secondline={`
-          Here's a peak - "What's your breakfast routine like?"
+          Here's a peek - "What's your breakfast routine like?"
         `}
       >
         <Polaroid
