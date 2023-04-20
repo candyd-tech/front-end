@@ -25,25 +25,23 @@ const FormComponent = ({formType}: FormComponentPropsType) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [type, setType] = useState("");
   const [excitment, setExcitment] = useState("");
 
   const submitForm = async () => {
     const re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,6}$/ 
 
-    if (name != "" && type != "" && excitment != "") {
+    if (name != "" && excitment != "") {
       if (re.test(email)) {
         try {
           const docRef = await addDoc(collection(db, "formData"), {
-            name, email, excitment, type
+            name, email, excitment
           });
           console.log(docRef.id);
           setName("")
           setEmail("")
           setExcitment("")
-          setType("")
 
-          router.push("/")
+          router.push("/done")
         } catch (e) {
           console.error(e);
         }
@@ -84,12 +82,7 @@ const FormComponent = ({formType}: FormComponentPropsType) => {
           </div>
 
           <div>
-            <label htmlFor="">Student, Faculty or Employee</label>
-            <input required value={type} onChange={e => setType(e.target.value)} type="text" />
-          </div>
-
-          <div>
-            <label htmlFor="">What about the product excites you?</label>
+            <label htmlFor="">What do you think? Feedback, insights, and initial thoughts are all welcome, be it good, bad, or neutral!</label>
             <input value={excitment} onChange={e => setExcitment(e.target.value)} type="text" />
           </div>
         </div>
