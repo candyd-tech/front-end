@@ -83,9 +83,9 @@ const homePages: slideInterface[] = [
   {
     key: "slide_memory",
     component: <HomeSlide
-        heading={"Memory Mementos"}
+        heading={"Yearbook full of your Memories"}
         paragraph={`
-          Transform your collected digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical memento, one to treasure forever. 
+          Transform your collected digital memories into tangible keepsakes that are full of surprises, personalized dedications, and thoughtful uploads. Preserve your memories in a physical yearbook, one to treasure forever. 
         `}
       >
         <div className={ `${pstyles.polaroid} relative drop-shadow-lg rotate-12 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg:w-[18rem] lg:h-[18rem]` }>

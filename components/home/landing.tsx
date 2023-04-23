@@ -31,7 +31,7 @@ const Landing = ({isClipped}: LandingPropsType) => {
         </h1>
 
         <p className={`font-medium text-[1rem] md:text-[1rem] lg:text-xl`}>
-          Embark on a 7-day campus quest with your friends, completing tasks and following clues to create your own memory lane. <br />
+          Embark on a 7-day campus quest with your friends, completing tasks and following clues to create your own yearbook. <br />
           Sign up for an offbeat and vibrant way of capturing your campus experience! 
         </p>
 
