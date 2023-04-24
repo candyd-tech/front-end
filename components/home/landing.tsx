@@ -32,7 +32,7 @@ const Landing = ({isClipped}: LandingPropsType) => {
 
         <p className={`font-medium text-[1rem] md:text-[1rem] lg:text-xl`}>
           Embark on a 7-day campus quest with your friends, completing tasks and following clues to create your own yearbook. <br />
-          Sign up for an offbeat and vibrant way of capturing your campus experience! 
+          Join the waitlist for an offbeat and vibrant way of capturing your campus experience! 
         </p>
 
         <div className={`${ 'text-black' }`}>
@@ -47,7 +47,7 @@ const Landing = ({isClipped}: LandingPropsType) => {
               `}
               onClickButton={() => {}}
               font={poppins400.className}
-              text={"Sign Up"}
+              text={"Join"}
             />
           </Link>
         </div>
