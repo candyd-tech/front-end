@@ -51,7 +51,7 @@ const FormComponent = ({formType}: FormComponentPropsType) => {
         })
       }
     } else {
-      toast("All fields must be field", {
+      toast("All fields must be filled", {
         className: styles.toast
       })
     }
